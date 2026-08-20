@@ -3,10 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
   <title>KentBakiye — Kentsel Dönüşüm Muhasebe Sistemi</title>
-  <meta name="description" content="KentBakiye, kentsel dönüşüm ve yapı projeleri için muhasebe, bütçe, ödeme, tahsilat ve mali raporlama sistemi.">
+  <meta name="description" content="KentBakiye, kentsel dönüşüm ve yapı projeleri için muhasebe, bütçe, ödeme, tahsilat ve mali raporlama sistemidir. Parsel bazlı gelir-gider takibi, malik ödeme planları ve gecikmiş tahsilat uyarıları.">
+  <link rel="canonical" href="https://kentbakiye.com/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="KentBakiye">
   <meta name="theme-color" content="#12324A">
   <meta name="color-scheme" content="light">
+
+  <!-- Sosyal medya / paylaşım kartı -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KentBakiye">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:url" content="https://kentbakiye.com/">
+  <meta property="og:title" content="KentBakiye — Kentsel Dönüşüm Muhasebe Sistemi">
+  <meta property="og:description" content="Dönüşümün hesabı net. Kentsel dönüşüm ve yapı projeleriniz için muhasebe, bütçe, ödeme, tahsilat ve mali raporlama sistemi.">
+  <meta property="og:image" content="https://kentbakiye.com/assets/kentbakiye-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KentBakiye logosu">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KentBakiye — Kentsel Dönüşüm Muhasebe Sistemi">
+  <meta name="twitter:description" content="Dönüşümün hesabı net. Kentsel dönüşüm projeleri için muhasebe, ödeme ve tahsilat takibi.">
+  <meta name="twitter:image" content="https://kentbakiye.com/assets/kentbakiye-og.png">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/kentbakiye-icon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/kentbakiye-icon-192.png">
@@ -18,16 +38,56 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Arama motorları için yapısal veri -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KentBakiye",
+    "alternateName": "KentBakiye Kentsel Dönüşüm Muhasebe Sistemi",
+    "url": "https://kentbakiye.com/",
+    "logo": "https://kentbakiye.com/assets/kentbakiye-logo@2x.png",
+    "image": "https://kentbakiye.com/assets/kentbakiye-og.png",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Muhasebe",
+    "operatingSystem": "Web",
+    "inLanguage": "tr-TR",
+    "slogan": "Dönüşümün hesabı net.",
+    "description": "Kentsel dönüşüm ve yapı projeleri için muhasebe, bütçe, ödeme, tahsilat ve mali raporlama sistemi.",
+    "featureList": [
+      "Parsel bazlı gelir-gider takibi",
+      "Malik başına esnek ödeme planı",
+      "Gecikmiş tahsilat uyarıları",
+      "Harcama kalemleri ve kasa bakiyesi raporu"
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Açılış ekranı -->
   <div id="acilis" class="acilis">
-    <img src="./assets/kentbakiye-icon-192.png" alt="KentBakiye">
+    <img src="./assets/kentbakiye-icon-192.png" alt="KentBakiye" width="64" height="64">
     <div class="spinner"></div>
     <p>Yükleniyor…</p>
   </div>
 
   <div id="app"></div>
+
+  <noscript>
+    <div style="max-width:640px;margin:60px auto;padding:0 24px;font-family:system-ui,sans-serif">
+      <h1>KentBakiye — Kentsel Dönüşüm Muhasebe Sistemi</h1>
+      <p><strong>Dönüşümün hesabı net.</strong></p>
+      <p>
+        KentBakiye; kentsel dönüşüm ve yapı projeleri için muhasebe, bütçe, ödeme,
+        tahsilat ve mali raporlama sistemidir. Parsel bazlı gelir-gider takibi,
+        malik başına esnek ödeme planları ve gecikmiş tahsilat uyarıları sunar.
+      </p>
+      <p>
+        Uygulamayı kullanabilmek için tarayıcınızda JavaScript'in açık olması gerekir.
+      </p>
+    </div>
+  </noscript>
 
   <div id="modal-katman" class="modal-katman gizli"></div>
   <div id="toast-alan" class="toast-alan"></div>

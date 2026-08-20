@@ -17,8 +17,6 @@ export const firebaseConfig = {
   measurementId: "G-CS7EWCWBFP"
 };
 
-// Sifre sifirlama e-postasindaki linkin geri donecegi adres.
-// GitHub Pages adresinizi yazin, orn:
-//   "https://kullaniciadi.github.io/muhasebe-app/"
-// Bos birakirsaniz uygulamanin acik oldugu adres kullanilir.
-export const SIFIRLAMA_ADRESI = "";
+// Sifre sifirlama e-postasindaki baglantinin geri donecegi adres.
+// Bos birakilirsa uygulamanin acik oldugu adres kullanilir.
+export const SIFIRLAMA_ADRESI = "https://kentbakiye.com/";
