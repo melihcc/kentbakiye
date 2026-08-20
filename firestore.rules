@@ -1,0 +1,54 @@
+rules_version = '2';
+
+// ============================================================================
+//  KentBakiye — Firestore Guvenlik Kurallari
+//
+//  Firebase Console > Firestore Database > Rules bolumune bu dosyanin
+//  TAMAMINI yapistirip "Publish" deyin.
+//
+//  Mantik: Sadece giris yapmis (bizim olusturdugumuz) kullanicilar
+//  muhasebe verisini okuyup yazabilir. Uygulamada kayit ekrani yoktur ve
+//  Authentication > Settings > User actions > "Enable create (sign-up)"
+//  kapatildigi icin disaridan kimse hesap acamaz.
+//
+//  ONEMLI: Panel ekrani butun parsellerin maliklerini ve harcamalarini
+//  tek seferde okumak icin "collection group" sorgusu kullanir. Bu sorgu
+//  turu, /parseller/{id}/malikler/{id} seklindeki ic ice kurallarla
+//  YETKILENMEZ; asagidaki gibi joker yollu ( /{yol=**}/malikler/{id} )
+//  ayri bir kural sart. Aksi halde uygulama "Bu islem icin yetkiniz yok"
+//  hatasi verir.
+// ============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function girisYapmis() {
+      return request.auth != null && request.auth.uid != null;
+    }
+
+    // ---- Kullanici profilleri (ad soyad, tanitim turu durumu) ----
+    // Herkes ekip arkadasinin adini gorebilir, ama sadece kendi kaydini yazabilir.
+    match /kullanicilar/{uid} {
+      allow read: if girisYapmis();
+      allow create, update: if girisYapmis() && request.auth.uid == uid;
+      allow delete: if false;
+    }
+
+    // ---- Parseller ----
+    match /parseller/{parselId} {
+      allow read, write: if girisYapmis();
+    }
+
+    // ---- Malikler ve odeme planlari ----
+    // Joker yol: hem /parseller/{id}/malikler/{id} dogrudan erisimini
+    // hem de collectionGroup("malikler") sorgusunu kapsar.
+    match /{yol=**}/malikler/{malikId} {
+      allow read, write: if girisYapmis();
+    }
+
+    // ---- Harcamalar ----
+    match /{yol=**}/harcamalar/{harcamaId} {
+      allow read, write: if girisYapmis();
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "KentBakiye — Kentsel Dönüşüm Muhasebe Sistemi",
+  "short_name": "KentBakiye",
+  "description": "Kentsel dönüşüm ve yapı projeleri için muhasebe, bütçe, ödeme, tahsilat ve mali raporlama sistemi.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#12324A",
+  "theme_color": "#12324A",
+  "icons": [
+    { "src": "./assets/kentbakiye-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/kentbakiye-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
